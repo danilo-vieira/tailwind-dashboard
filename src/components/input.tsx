@@ -1,7 +1,18 @@
-type InputPrefixProps = React.ComponentProps<'div'>
+import React from 'react'
+import { cn } from '../lib/utils'
 
-export const Prefix = (props: InputPrefixProps) => {
-  return <div {...props} />
+type InputPrefixProps = React.ComponentProps<'div'> & {
+  children: React.ReactElement
+}
+
+export const Prefix = ({ children, ...rest }: InputPrefixProps) => {
+  return (
+    <div {...rest}>
+      {React.cloneElement(children, {
+        className: cn('size-5 text-zinc-500', children.props.className),
+      })}
+    </div>
+  )
 }
 
 type InputControlProps = React.ComponentProps<'input'>
@@ -20,7 +31,7 @@ type InputRootProps = React.ComponentProps<'div'>
 export const Root = (props: InputRootProps) => {
   return (
     <div
-      className="mx-1 flex min-h-11 w-full items-center gap-2 rounded-lg border border-zinc-300 px-3 py-2 shadow-sm"
+      className="mx-1 flex min-h-11 w-full items-center gap-2 overflow-hidden rounded-lg border border-zinc-300 px-3 py-2 shadow-sm"
       {...props}
     />
   )

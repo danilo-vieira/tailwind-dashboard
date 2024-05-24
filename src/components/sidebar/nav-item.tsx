@@ -9,7 +9,6 @@ export const Prefix = ({ children, ...rest }: NavItemPrefixProps) => {
   return (
     <div {...rest}>
       {React.cloneElement(children, {
-        ...children.props,
         className: cn('size-5 text-zinc-500', children.props.className),
       })}
     </div>
@@ -38,7 +37,6 @@ export const Suffix = ({ children, ...rest }: NavItemSuffixProps) => {
   return (
     <div className="ml-auto" {...rest}>
       {React.cloneElement(children, {
-        ...children.props,
         className: cn(
           'group-hover:text-violet-300 size-5 text-zinc-400',
           children.props.className,

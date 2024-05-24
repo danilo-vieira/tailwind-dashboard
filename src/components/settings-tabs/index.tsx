@@ -36,7 +36,7 @@ export const SettingsTabs = () => {
         <TabItem selectedTab={selectedTab} value="api" title="API" />
       </Tabs.List>
 
-      <Tabs.Content value="tab1">asdasd</Tabs.Content>
+      <Tabs.Content value="password">asdasd</Tabs.Content>
     </Tabs.Root>
   )
 }

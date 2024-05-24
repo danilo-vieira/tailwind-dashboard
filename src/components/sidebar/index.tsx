@@ -24,7 +24,7 @@ export const Sidebar = () => {
 
       <Input.Root>
         <Input.Prefix>
-          <Search className="size-5 text-zinc-500" />
+          <Search />
         </Input.Prefix>
 
         <Input.Control placeholder="Search..." />
